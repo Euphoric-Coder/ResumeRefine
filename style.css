@@ -1,4 +1,5 @@
 /* style.qss */
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 
 QDialog {
     background-color: #f5f5f5; /* Light Gray */
@@ -9,6 +10,8 @@ QDialog {
 QLabel {
     color: #333; /* Dark Gray */
     font-weight: bold;
+    font-family: "Nerko One", cursive;
+    font-size: 40px;
 }
 
 QListWidget {
@@ -28,7 +31,7 @@ QListWidget::item:hover {
 }
 
 QPushButton {
-    background-color: #007acc; /* Deep Blue */
+    background-color: #0795f5; /* Deep Blue */
     color: #ffffff; /* White Text */
     border: 2px solid #007acc; /* Deep Blue Border */
     padding: 15px 30px;
@@ -55,7 +58,6 @@ QLineEdit:focus, QTextEdit:focus {
 }
 
 QCheckBox {
-    spacing: 4px;
     color: #333; /* Dark Gray */
 }
 
