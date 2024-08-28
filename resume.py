@@ -107,11 +107,15 @@ class ResumeReviewer(QMainWindow):
         Job Description:{self.jd}
         Job Role: {self.jr}
 
-        I want the response in one single string having the structure
-        {{"JD Match":"%","Profile Summary":"", "Suggestions:[]"}}
+        Also mention the JD Match in percentage.
+        Give a in detail explanation what could be done to make the resume more good. 
+        Show a modified resume also using the same data.
+        Also mention the relevant keywords that are needed for this job.
         """
+        # I want the response in one single string having the structure
+        # {{"JD Match":"%","Profile Summary":"", "Suggestions:[]"}}
         # Toggle visibility of the QTextEdit
-        self.result_edit.setText(input_prompt)
+        self.result_edit.setText(self.get_gemini_repsonse(input=input_prompt))
 
     def open_file_dialog(self):
         # Open a file dialog to choose a file
