@@ -1,17 +1,61 @@
 /* style.qss */
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 
-QDialog {
-    background-color: #f5f5f5; /* Light Gray */
-    /* border-radius: 20px; Rounded Corners */
-    border: 2px solid #007acc; /* Deep Blue Border */
+QMainWindow {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,  /* Diagonal gradient */
+        stop: 0 #cde7ff,            /* Light blue */
+        stop: 1 #fff9e5             /* Light yellow */
+    ); /* Matching gradient to create a cohesive look */
 }
 
-QLabel {
+
+#appname {
     color: #333; /* Dark Gray */
-    font-weight: bold;
-    font-family: "Nerko One", cursive;
-    font-size: 40px;
+    font-family: "Caveat";
+    font-weight: 700;
+    font-size: 70px;
+}
+
+#jd, #jr {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 18px;
+    color: black;  /* Optional: Change the text color */
+}
+
+#jdline {
+    color: #333; /* Dark Gray */
+    border: 1px solid #d9d9d9; /* Light Gray Border */
+    padding: 15px;
+    border-radius: 20px; /* Rounded Corners */
+    width: 200px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #e0f2ff,  /* Enhanced light blue */
+        stop: 1 #fff8cc   /* Enhanced light yellow */
+    ); /* More visible gradient matching the overall theme */
+}
+
+#jrline, QTextEdit {
+    color: #333; /* Dark Gray */
+    border: 1px solid #d9d9d9; /* Light Gray Border */
+    padding: 15px;
+    border-radius: 20px; /* Rounded Corners */
+    width: 400px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #e0f2ff,  /* Enhanced light blue */
+        stop: 1 #fff8cc   /* Enhanced light yellow */
+    ); /* More visible gradient matching the overall theme */
+}
+
+#jdline:focus, #jrline:focus, QTextEdit:focus {
+    border: 2px solid #007acc; /* Deep Blue Border on Focus */
 }
 
 QListWidget {
@@ -31,30 +75,34 @@ QListWidget::item:hover {
 }
 
 QPushButton {
-    background-color: #0795f5; /* Deep Blue */
-    color: #ffffff; /* White Text */
-    border: 2px solid #007acc; /* Deep Blue Border */
-    padding: 15px 30px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 25px; /* Rounder Corners */
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+    color: #243070; /* Darker shade for the icon */
+    border: 2px solid #333;
+    border-radius: 26px; /* 50% of width/height to make it circular */
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #a0c8ff,   /* Lighter blue */
+        stop: 1 #fff4c2    /* Lighter yellow */
+    ); /* Vibrant blue to yellow gradient */
 }
 
 QPushButton:hover {
-    background-color: #005b8c; /* Slightly Darker Hover */
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #b2e4ff,   /* Even lighter blue */
+        stop: 1 #fff6d1    /* Lighter yellow on hover */
+    ); /* Lighter gradient on hover */
 }
 
-QLineEdit, QTextEdit {
-    background-color: #ffffff; /* White */
-    color: #333; /* Dark Gray */
-    border: 1px solid #d9d9d9; /* Light Gray Border */
-    padding: 15px;
-    border-radius: 20px; /* Rounded Corners */
-}
-
-QLineEdit:focus, QTextEdit:focus {
-    border: 2px solid #007acc; /* Deep Blue Border on Focus */
+QPushButton:pressed {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #80bfff,   /* Slightly more intense blue */
+        stop: 1 #fff2a1    /* Slightly more intense yellow */
+    ); /* More intense colors for active state */
 }
 
 QCheckBox {
