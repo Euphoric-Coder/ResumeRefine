@@ -113,6 +113,7 @@ class ResumeReviewer(QMainWindow):
         5. **Identify Relevant Keywords**: List critical keywords or phrases that are essential for the specific job description and job role. Include a separate section with all the necessary keywords to ensure the resume passes through Applicant Tracking Systems (ATS).
         6. **Suggest Suitable Job Roles**: Based on the resume content, identify and list other job roles or positions for which the candidate is a good fit. Include a separate section titled "Suitable Job Roles" that specifies these roles.
         7. **Provide Tips for Improving JD Match Percentage**: Offer specific tips and strategies to help increase the JD match percentage above 95%. This could include guidance on tailoring specific sections, highlighting certain skills or experiences, and optimizing the use of keywords.
+        8. **Generate a Sample Resume**: Based on the improvements suggested, create a sample resume that reflects the necessary changes and optimizations for a better match with the job description.
 
         **Input Data:**
 
@@ -130,6 +131,7 @@ class ResumeReviewer(QMainWindow):
         6. **Additional Keywords for ATS**: A comprehensive list of keywords that should be included to maximize visibility in ATS.
         7. **Suitable Job Roles**: List other job roles or positions that the resume appears to be a good fit for, based on its content.
         8. **Tips for Achieving a JD Match Above 95%**: Provide specific tips and strategies for improving the JD match percentage to above 95%, including suggestions for tailoring, optimizing keywords, and focusing on specific skills or experiences.
+        9. **Sample Resume**: Generate a revised sample resume that reflects the suggested changes and optimizations, making it a strong fit for the given job description.
 
         Aim to provide a detailed, high-quality output that guides the candidate to achieve a JD match of 95% or more and make the resume stand out in a competitive job market.
         """
