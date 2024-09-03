@@ -31,6 +31,7 @@ class ResumeReviewer(QMainWindow):
         # Loads the External Google Fonts
         self.font_load(font_path="./fonts/Raleway.ttf")
         self.font_load(font_path="./fonts/Caveat.ttf")
+        self.font_load(font_path="/fonts/CourierPrime.ttf")
 
         # Set the central widget and layout
         central_widget = QWidget()
@@ -69,7 +70,7 @@ class ResumeReviewer(QMainWindow):
 
         # Job role/position
         job_role = QHBoxLayout()
-        self.jr_label = QLabel("Job Role / Position (JR) ")
+        self.jr_label = QLabel("Job Role/Position (JR) ")
         # job_description.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.jr_line = QLineEdit()
         self.jr_line.setObjectName("jrline")
@@ -203,6 +204,6 @@ if __name__ == "__main__":
     app.setStyleSheet(stylesheet)
 
     main_window = ResumeReviewer()
-    main_window.resize(400, 300)  # Adjust the size of the main window
+    main_window.resize(450, 700)  # Adjust the size of the main window
     main_window.show()
     sys.exit(app.exec())

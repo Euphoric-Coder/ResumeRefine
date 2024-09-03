@@ -18,9 +18,9 @@ QMainWindow {
 }
 
 #jd, #jr {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 900;
-    font-size: 18px;
+    font-family: 'Courier New',Courier, monospace;
+    font-weight: 700;
+    font-size: 20px;
     color: black;  /* Optional: Change the text color */
 }
 
@@ -76,9 +76,9 @@ QListWidget::item:hover {
 
 QPushButton {
     padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New',Courier, monospace;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 900;
     color: #243070; /* Darker shade for the icon */
     border: 2px solid #333;
     border-radius: 26px; /* 50% of width/height to make it circular */
