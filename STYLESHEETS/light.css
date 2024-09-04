@@ -14,7 +14,7 @@ QMainWindow {
     color: #333; /* Dark Gray */
     font-family: "Caveat";
     font-weight: 700;
-    font-size: 70px;
+    font-size: 80px;
 }
 
 #jd, #jr {

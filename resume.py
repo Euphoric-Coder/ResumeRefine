@@ -7,6 +7,7 @@ from PyQt6.QtGui import *
 from PyQt6.QtWidgets import *
 from dotenv import load_dotenv
 import os
+import subprocess 
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -28,6 +29,12 @@ class ResumeReviewer(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("ResumeRefine")
+        
+        self.theme_check_timer = QTimer(self)
+        self.theme_check_timer.timeout.connect(self.check_and_update_theme)
+        # Checks the theme status every 0.6 seconds
+        self.theme_check_timer.start(600)
+
         # Loads the External Google Fonts
         self.font_load(font_path="./fonts/Raleway.ttf")
         self.font_load(font_path="./fonts/Caveat.ttf")
@@ -186,6 +193,29 @@ class ResumeReviewer(QMainWindow):
         else:
             return False
 
+    def load_stylesheet(self, path):
+        style_sheet = ""
+        path = os.path.abspath(path)
+        with open(path, "r") as file:
+            style_sheet = file.read()
+        self.setStyleSheet(style_sheet)
+
+    # GOT A HOLD OF THIS CODE FROM STALK OVERFLOW. HERE IS THE CODE
+    # https://stackoverflow.com/questions/65294987/detect-os-dark-mode-in-python
+    def macos_theme(self):
+        """Checks DARK/LIGHT mode of macos."""
+        cmd = "defaults read -g AppleInterfaceStyle"
+        p = subprocess.Popen(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True
+        )
+        return bool(p.communicate()[0])
+
+    def check_and_update_theme(self):
+        if (self.macos_theme()):
+            self.load_stylesheet("./STYLESHEETS/dark.css")
+        else:
+            self.load_stylesheet("./STYLESHEETS/light.css")
+
     def show_error_message(self, title, message):
         # Show an error message using QMessageBox
         error_msg = QMessageBox()
@@ -197,11 +227,6 @@ class ResumeReviewer(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-
-    # Load and apply stylesheet
-    with open("style.css", "r") as file:
-        stylesheet = file.read()
-    app.setStyleSheet(stylesheet)
 
     main_window = ResumeReviewer()
     main_window.resize(450, 700)  # Adjust the size of the main window
